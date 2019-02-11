@@ -36,21 +36,7 @@ public class Controller1 extends BaseController {
 
 	private void drawStartAnimView(Paint paint, Canvas canvas) {
 		canvas.save();
-		//0~1
 		if(mpro<=0.5f){
-//			canvas.drawArc(
-	//			r, 
-	//			startAngle, //��ʼ�Ƕȣ����X��������
-	//			sweepAngle, //�����ٽǶȵĻ���
-	//			useCenter, //boolean, false��ֻ��һ�������ߣ�true���պϵı�
-	//			paint)��
-//			canvas.drawArc(r, 0, 90, true, paint);//˳ʱ����ת90��
-			/**
-			 * -360 ~ 0 ��Ҫ�任�ķ�Χ
-			 * 	 0  ~ 0.5 mproʵ�ʵı仯��Χ
-			 * ת����ʽ��360*(mpro*2-1),
-			 */
-			//����Բ�Ͱ���
 			canvas.drawArc(
 					mRectF, 
 					45, 
@@ -63,13 +49,7 @@ public class Controller1 extends BaseController {
 					mRectF.right+cr-j, 
 					mRectF.bottom+cr-j,
 					paint);
-		}else {
-			/**
-			 *   0    ~ 1 ��Ҫ�任�ķ�Χ
-			 * 	 0.5  ~ 1 mproʵ�ʵı仯��Χ
-			 * ת����ʽ��(mpro*2-1),
-			 */
-			//���ư���
+		}else{
 			canvas.drawLine(
 					mRectF.right - j + cr*(mpro*2-1),
 					mRectF.bottom - j + cr*(mpro*2-1),
@@ -77,7 +57,6 @@ public class Controller1 extends BaseController {
 					mRectF.bottom+cr-j,
 					paint);
 		}
-		//��������ĺ���
 		canvas.drawLine(
 				(mRectF.right - j + cr)*(1-mpro*0.8f),
 				mRectF.bottom+cr-j,
@@ -90,7 +69,6 @@ public class Controller1 extends BaseController {
 		mRectF.right = cx + cr +mpro*250;
 		mRectF.top = cy - cr;
 		mRectF.bottom = cy + cr;
-		
 	}
 
 	private void drawNormalView(Paint paint, Canvas canvas) {
@@ -130,7 +108,7 @@ public class Controller1 extends BaseController {
 	}
 	
 	@Override
-	public void resetAnim() {
+	public void resetAnim(){
 		// TODO Auto-generated method stub
 		super.resetAnim();
 		mState = STATE_ANIM_STOP;

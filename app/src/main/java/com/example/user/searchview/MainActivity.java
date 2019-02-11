@@ -10,9 +10,11 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		searchView = (MySearchView)findViewById(R.id.sv);
-		searchView.setController(new Controller1());
+		setContentView(new SearchView(this));
+
+//		setContentView(R.layout.activity_main);
+//		searchView = (MySearchView)findViewById(R.id.sv);
+//		searchView.setController(new Controller1());
 		
 	}
 	
